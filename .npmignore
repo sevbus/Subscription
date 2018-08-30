@@ -1,0 +1,12 @@
+# Ignore source folders
+src/
+test/
+
+# Ignore node_modules
+node_modules/
+
+# Ignore map files
+*.js.map
+
+# Ignore typescript related files
+tsconfig*.json
