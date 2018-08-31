@@ -1,25 +1,24 @@
 {
-  "name": "subscription",
-  "version": "0.1.0",
+  "name": "@sevbus/subscription",
+  "version": "0.1.4",
   "description": "A subcription concept for TypeScript",
-  "main": "./dist/Subscription.js",
-  "types": "./dist/Subscription.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sevbus/Subscription.git"
+    "url": "https://github.com/sevbus/Subscription.git"
   },
   "scripts": {
     "test": "mocha test/dist/test/*.js",
     "build": "tsc",
     "build-test": "tsc -p tsconfig.test.json",
     "build-all": "npm run build && npm run build-test && npm run test",
-    "clean": "rimraf dist test/dist",
-    "webpack": "webpack",
-    "prepublishOnly": "npm run clean && npm run webpack"
-  },
+    "clean": "rimraf dist test/dist"
+    },
   "keywords": [
     "typescript",
-    "subscription"
+    "subscription",
+    "observer"
   ],
   "author": "Frank Wigger",
   "license": "MIT",
@@ -29,9 +28,6 @@
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "rimraf": "^2.6.2",
-    "ts-loader": "^4.5.0",
-    "typescript": "^3.0.3",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "typescript": "^3.0.3"
   }
 }
