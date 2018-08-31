@@ -14,7 +14,8 @@
     "build-test": "tsc -p tsconfig.test.json",
     "build-all": "npm run build && npm run build-test && npm run test",
     "clean": "rimraf dist test/dist",
-    "prepublishOnly": "npm run clean && npm run build"
+    "webpack": "webpack",
+    "prepublishOnly": "npm run clean && npm run webpack"
   },
   "keywords": [
     "typescript",
@@ -28,6 +29,9 @@
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "rimraf": "^2.6.2",
-    "typescript": "^3.0.3"
+    "ts-loader": "^4.5.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
   }
 }
