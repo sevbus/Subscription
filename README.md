@@ -10,6 +10,47 @@ npm install @sevbus/subscription
 
 ## Getting started
 
+### Notifying an event
+
+```javascript
+import {INotifyEvent, IEventHandler, EventHandler} from "@sevbus/subscription";
+
+interface EventData {
+    // some event data
+    name:string;
+    count:number;
+}
+
+class MyObject implements INotifyEvent {
+    public get eventHandler():IEventHandler {
+        return this._eventHandler;
+    }
+       
+    public do() {
+        // do something
+                        
+        this._eventHandler.notify<EventData>("done", {name:"test", count:1});
+    }
+    
+    private _eventHandler = new EventHandler();
+}
+```
+
+### Subscribing for an event
+```javascript
+let myObject = new MyObject();
+
+let subscription = myObject.eventHandler.subscribe("done", (e?:EventData) => {
+    console.info("done");    
+});
+
+```
+
+### Unsubscribing 
+```javascript
+subscription.unsubscribe();
+```
+
 ### Notifying a PropertyChangedEvent
 
 ```javascript
@@ -44,10 +85,7 @@ let subscription = myObject.propertyChanged.subscribe("myProperty", (e:PropertyC
 
 ```
 
-### Unsubscribing 
-```javascript
-subscription.unsubscribe();
-```
+
 
 
 
