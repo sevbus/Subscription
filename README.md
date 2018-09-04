@@ -13,6 +13,8 @@ npm install @sevbus/subscription
 ### Notifying a PropertyChangedEvent
 
 ```javascript
+import {INotifyPropertyChanged, IPropertyChangedHandler, PropertyChangedHandler} from "@sevbus/subscription";
+
 class MyObject implements INotifyPropertyChanged {
     public get propertyChanged():IPropertyChangedHandler {
         return this._propertyChanged;
