@@ -11,3 +11,4 @@ node_modules/
 # Ignore typescript related files
 tsconfig*.json
 
+*.tgz

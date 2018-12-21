@@ -94,7 +94,7 @@ export class EventHandler implements IEventHandler {
         return this._subscriptionHandler.subscribe(eventName, callback);
     }
 
-    public notify<T>(eventName:string, e:T) {
+    public notify<T>(eventName:string, e?:T) {
         this._subscriptionHandler.notify(eventName, e);
     }
 
